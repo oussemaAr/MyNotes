@@ -35,9 +35,9 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteViewHolder> {
         Note note = data.get(position);
         holder.title.setText(note.getTitle());
         holder.description.setText(note.getDescription());
-        holder.countdown.setText(Utils.timetogo(holder.itemView.getContext(), note.getTimestamp()));
+        holder.countdown.setText(Utils.timetogo(note.getTimestamp()));
         holder.deleteButton.setOnClickListener(v -> {
-            itemClickListener.onItemClicked(position);
+            itemClickListener.onItemClicked(note);
         });
     }
 
@@ -52,5 +52,6 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteViewHolder> {
 
     void setData(List<Note> data) {
         this.data = data;
+        notifyDataSetChanged();
     }
 }

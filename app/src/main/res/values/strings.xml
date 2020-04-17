@@ -6,4 +6,5 @@
     <string name="set_date">Issue Date</string>
     <string name="app_name">My Notes</string>
     <string name="picker_title">Select Date</string>
+    <string name="note_delete">Your Note is Deleted !</string>
 </resources>

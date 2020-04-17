@@ -1,6 +1,8 @@
 package com.orangetunisie.mynotes.utils;
 
+import com.orangetunisie.mynotes.data.entity.Note;
+
 public interface ItemClickListener {
 
-    void onItemClicked(int pos);
+    void onItemClicked(Note note);
 }

@@ -1,18 +1,35 @@
 package com.orangetunisie.mynotes.data.entity;
 
-public class Note {
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
+@Entity(tableName = "note")
+public class Note {
+    @PrimaryKey(autoGenerate = true)
+    private int id;
+    @ColumnInfo(name = "title")
     private String title;
     private String description;
+
     private long timestamp;
 
     public Note() {
     }
 
-    public Note(String title, String description, long timestamp) {
+    public Note(int id, String title, String description, long timestamp) {
+        this.id = id;
         this.title = title;
         this.description = description;
         this.timestamp = timestamp;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle() {
